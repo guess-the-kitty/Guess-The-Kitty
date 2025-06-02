@@ -34,9 +34,9 @@
     
 
     //This all here is for cache busting;
-    function addScript(src, buster, callback) {
+    function addScript(src, callback) {
         var s = document.createElement('script');
-        s.setAttribute('src', src + '?v=' + buster);
+        s.setAttribute('src', src + '?v=2' );
         if (typeof callback === 'function') {
             s.onload = callback;
         }
@@ -44,7 +44,7 @@
     }
 
   
-        addScript(gameName, 2, function () {
+        addScript(gameName, function () {
             /**
              * Here we create the game
              */
