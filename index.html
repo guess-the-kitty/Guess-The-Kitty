@@ -20,6 +20,36 @@
   </style>
 </head>
 <body>
+  <div id="content"></div>
+<div id="dummy" style="position:fixed;right:0;bottom:0"></div>
+<div id="orientation"></div>
+<div id="loader">Loading ...</div>
+
+<script type="text/javascript">
+    
+    var gameName = "guess-the-kitty.min.js";
+    
+
+    //This all here is for cache busting;
+    function addScript(src, buster, callback) {
+        var s = document.createElement('script');
+        s.setAttribute('src', src + '?v=' + buster);
+        if (typeof callback === 'function') {
+            s.onload = callback;
+        }
+        document.body.appendChild(s);
+    }
+
+  
+        addScript(gameName, version, function () {
+            /**
+             * Here we create the game
+             */
+            var game = new Gtk.Game();
+            game.start();
+        })
+
+</script>
 
   <h1>Guess the Kitty – Can You Outsmart These Tricky Felines?</h1>
 
