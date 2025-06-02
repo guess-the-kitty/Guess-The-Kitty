@@ -20,40 +20,52 @@
     h1, h2 {
       color: #222;
     }
+      #gameContainer {
+      position: relative;
+      width: 90vw;
+      max-width: 1000px;
+      aspect-ratio: 16 / 9;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    #gameFrame {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    #fullscreenBtn {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
    <h1>Guess the Kitty</h1>
   <div id="content"></div>
-<div id="dummy" style="position:fixed;right:0;bottom:0"></div>
-<div id="orientation"></div>
-<div id="loader">Loading ...</div>
+   <div id="gameContainer">
+    <iframe id="gameFrame" src="https://ubg98.github.io/GuessTheKitty/"></iframe>
+  </div>
+   <button id="fullscreenBtn">Go Fullscreen</button>
 
-<script type="text/javascript">
-    
-    var gameName = "guess-the-kitty.min.js";
-    
+<script>
+    const btn = document.getElementById("fullscreenBtn");
+    const iframe = document.getElementById("gameFrame");
 
-    //This all here is for cache busting;
-    function addScript(src, callback) {
-        var s = document.createElement('script');
-        s.setAttribute('src', src + '?v=2' );
-        if (typeof callback === 'function') {
-            s.onload = callback;
-        }
-        document.body.appendChild(s);
-    }
-
-  
-        addScript(gameName, function () {
-            /**
-             * Here we create the game
-             */
-            var game = new Gtk.Game();
-            game.start();
-        })
-
-</script>
+    btn.addEventListener("click", () => {
+      if (iframe.requestFullscreen) {
+        iframe.requestFullscreen();
+      } else if (iframe.webkitRequestFullscreen) {
+        iframe.webkitRequestFullscreen();
+      } else if (iframe.msRequestFullscreen) {
+        iframe.msRequestFullscreen();
+      } else {
+        alert("Fullscreen not supported in this browser.");
+      }
+    });
+  </script>
 
  
 
