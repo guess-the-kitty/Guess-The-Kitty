@@ -1,5 +1,5 @@
 Guess The Kitty is a cat-themed puzzle game that focuses on recognizing cats while playing, which is both relaxing and fun. Players need to guess the correct breed of cat according to the picture, so as to unlock more cute meow star images and information. Whether you are a veteran cat slave or a newcomer, this game is full of healing and fun.
-（Play Guess The Kitty Online)[https://unblockedgames766.com/guess-the-kitty/]
+(Play Guess The Kitty Online)[https://unblockedgames766.com/guess-the-kitty/]
 
 The game is played by clicking to choose, simple operation and easy rhythm, suitable for killing fragmented time and relaxing the brain.
 
